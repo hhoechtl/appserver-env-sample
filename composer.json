@@ -1,0 +1,12 @@
+{
+  "name" : "appserver-io-apps/sample",
+  "description" : "The sample application",
+  "version" : "1.0.0",
+  "require" : {
+    "jms/serializer" : "0.16.*"
+  },
+  "config" : {
+    "vendor-dir" : "src/vendor",
+    "component-dir" : "src/components"
+  }
+}

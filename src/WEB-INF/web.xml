@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://www.appserver.io/appserver">
+
+    <display-name>appserver.io env sample application</display-name>
+    <description>This is the example application for the appserver.io servlet engine.</description>
+
+    <!--
+     | This section defines the servlets configured to handle all requests
+     | of your application. The configured servlets has to be mapped to the
+     | request URIs in the next section.
+    -->
+
+    <servlet>
+        <description>The hello world as servlet implementation.</description>
+        <display-name>Hello World</display-name>
+        <servlet-name>helloWorld</servlet-name>
+        <servlet-class>\AppserverIo\Apps\Sample\Servlets\HelloWorldServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <description>A servlet that handles DHTML files.</description>
+        <display-name>The DHTML servlet</display-name>
+        <servlet-name>dhtml</servlet-name>
+        <servlet-class>AppserverIo\Appserver\ServletEngine\Servlets\DhtmlServlet</servlet-class>
+    </servlet>
+
+    <!--
+     | These are the servlet mappings that maps a request by the script
+     | file name part of the URI to the apropriate servlet. The mapping
+     | uses the PHP fnmatch() method that allows several wildcards.
+    -->
+
+    <servlet-mapping>
+        <servlet-name>helloWorld</servlet-name>
+        <url-pattern>/helloWorld.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>dhtml</servlet-name>
+        <url-pattern>*.dhtml</url-pattern>
+    </servlet-mapping>
+
+
+</web-app>
